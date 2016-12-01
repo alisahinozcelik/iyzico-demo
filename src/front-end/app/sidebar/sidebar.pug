@@ -1,0 +1,30 @@
+.overlay([@overlay]="states.overlay", (click)="closeMenu()")
+.cont(
+	[@thickness]="states.thickness",
+	[@visibility]="states.visibility",
+	[ngClass]="{opened: isOpened}",
+	)
+	md-toolbar((click)="toggleMenu()")
+		md-icon(fontSet="fa", fontIcon="fa-rocket")
+		| Infinity
+	md-list
+		md-list-item.auto-height
+			img.avatar(
+				md-list-avatar,
+				src="/assets/images/avatar.png",
+				alt="",
+				[@avatar]="isOpened ? 'big' : 'small'")
+			h3(md-line) MOHAMED SAID
+			h4(md-line) Founder of App
+				md-icon(fontSet="fa", fontIcon="fa-caret-down")
+		ng-container(*ngFor="let group of menuList")
+			md-divider
+			h2(md-subheader, [@opacity]="isOpened ? 'opaque' : 'transparent'") {{group.title}}
+			md-list-item.menu-item(
+				*ngFor="let item of group.list",
+				[ngClass]="item.colorClass",
+				routerLinkActive="active")
+				a.content([routerLink]="item.path")
+					md-icon(fontSet="fa", [fontIcon]="item.icon")
+					| {{item.name}}
+				i(*ngIf="item.notification") {{item.notification}}

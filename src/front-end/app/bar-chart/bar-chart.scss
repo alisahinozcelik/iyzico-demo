@@ -1,0 +1,84 @@
+@import '../.common/common.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+#labels,
+svg {
+	font-family: 'Lato', sans-serif;
+}
+
+#labels {
+	position: absolute;
+	display: flex;
+	flex-flow: column;
+	flex-wrap: wrap;
+	padding: .5em 0;
+	font-size: 13px;
+	transition: left .1s ease;
+
+	span {
+		display: inline-block;
+		line-height: 1.4em;
+		margin-right: 1em;
+		cursor: pointer;
+
+		&:not(.active) {
+			opacity: .5;
+		}
+
+		&:before {
+			content: "";
+			display: inline-block;
+			float: left;
+			width: 1em;
+			height: 1em;
+			border-radius: 50%;
+			margin-top: .2em;
+			margin-right: 1em;
+		}
+
+		@each $name, $color in $color-set {
+			&.#{$name} {
+				&:before {
+					background-color: $color;
+				}
+			}
+		}
+	}
+}
+
+#labels-ref {
+	fill: transparent;
+}
+
+@each $name, $color in $color-set {
+	g.#{$name} {
+		rect {
+			fill: $color;
+		}
+	}
+}
+
+g {
+	transition: opacity .3s ease;
+}
+g.hidden {
+	opacity: 0;
+}
+
+text {
+	font-size: 3px;
+	text-anchor: middle;
+	// writing-mode: tb;
+}
+
+g.axis-y {
+	text {
+		text-anchor: start;
+		transition: opacity .5s ease;
+
+		&:not(.visible) {
+			opacity: 0;
+		}
+	}
+}

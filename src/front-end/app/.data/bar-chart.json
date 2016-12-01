@@ -1,0 +1,38 @@
+[
+	{
+		"label": "Customers",
+		"colorClass": "light-indigo",
+		"data": [
+			{"label": "Jan", "value": 710},
+			{"label": "Fab", "value": 280},
+			{"label": "Mar", "value": 300},
+			{"label": "Apr", "value": 310},
+			{"label": "May", "value": 650},
+			{"label": "Jun", "value": 540},
+			{"label": "Jul", "value": 810},
+			{"label": "Aug", "value": 680},
+			{"label": "Sep", "value": 700},
+			{"label": "Oct", "value": 600},
+			{"label": "Now", "value": 670},
+			{"label": "Dec", "value": 700}
+		]
+	},
+	{
+		"label": "Users",
+		"colorClass": "dark-indigo",
+		"data": [
+			{"label": "Jan", "value": 470},
+			{"label": "Fab", "value": 220},
+			{"label": "Mar", "value": 220},
+			{"label": "Apr", "value": 220},
+			{"label": "May", "value": 470},
+			{"label": "Jun", "value": 400},
+			{"label": "Jul", "value": 470},
+			{"label": "Aug", "value": 470},
+			{"label": "Sep", "value": 470},
+			{"label": "Oct", "value": 350},
+			{"label": "Now", "value": 470},
+			{"label": "Dec", "value": 470}
+		]
+	}
+]

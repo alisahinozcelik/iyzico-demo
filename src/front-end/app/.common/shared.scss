@@ -1,0 +1,64 @@
+@import './common.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #edf0f5;
+}
+
+[flex] {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	> * {
+		margin-bottom: $gap;
+	}
+}
+
+/**
+ * md-icon font-awesome fix
+ */
+md-icon.fa {
+	min-width: 24px;
+	line-height: 24px;
+	text-align: center;
+}
+
+/**
+ * MD fixes
+ */
+[md-line] {
+	overflow-y: hidden;
+}
+
+.box {
+	padding: $gap;
+	background-color: white;
+	border: 1px solid $border-color;
+
+	&:not(:last-child) {
+		margin-bottom: $gap;
+	}
+
+	.box-title {
+		margin-bottom: $gap;
+		margin-top: -$gap;
+		padding: 1em 0;
+		line-height: 1em;
+		border-bottom: 1px solid $border-color;
+		font-size: 16px;
+		font-weight: bold;
+	}
+}
+
+bar-chart {
+	display: block;
+	position: relative;
+}
+
+colored-label {
+	position: relative;
+}

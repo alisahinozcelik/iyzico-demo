@@ -1,0 +1,75 @@
+@import './.common/common.scss';
+
+@include angular-material-theme($default-theme);
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700');
+
+app {
+	display: flex;
+	height: 100vh;
+	font-family: 'Raleway', sans-serif;
+	color: #282828;
+}
+
+body {
+	transition: opacity .3s ease;
+}
+
+.medium {
+	font-weight: 500;
+}
+.semi-bold {
+	font-weight: 600;
+}
+.bold {
+	font-weight: 700;
+}
+
+main {
+	width: 100%;
+
+	> header {
+		display: flex;
+
+		> md-toolbar:first-child:not(:only-child) {
+			width: auto;
+			color: white;
+			background-color: $dark-indigo;
+		}
+	}
+}
+
+h1 {
+	color: #c5cae9;
+	font-size: 19px;
+	font-weight: 400;
+}
+
+#page-content {
+	padding: $gap;
+	padding-bottom: 0;
+	height: calc(100vh - 64px);
+	overflow-y: auto;
+}
+
+aside {
+	md-toolbar-row {
+		overflow: hidden;
+	}
+
+	md-list {
+
+		md-list-item.auto-height {
+			.md-list-item {
+				height: auto;
+			}
+		}
+
+		.menu-item {
+			.md-list-item {
+				justify-content: space-between;
+				overflow: hidden;
+			}
+		}
+	}
+}

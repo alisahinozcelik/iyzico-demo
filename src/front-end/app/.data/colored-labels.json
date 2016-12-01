@@ -1,0 +1,50 @@
+[
+	{
+		"title": "Total Leads",
+		"color": "dark-indigo",
+		"icon": "attach",
+		"data": [
+			{"value": 100163456},
+			{"value": 80163456},
+			{"value": 20163456},
+			{"value": 40163456},
+			{"value": 66163456}
+		]
+	},
+	{
+		"title": "Total Pending",
+		"color": "orange",
+		"icon": "forbidden",
+		"data": [
+			{"value": 3490244},
+			{"value": 5490244},
+			{"value": 1490244},
+			{"value": 2490244},
+			{"value": 3490244}
+		]
+	},
+	{
+		"title": "Case Closed",
+		"color": "green",
+		"icon": "lock",
+		"data": [
+			{"value": 1123123},
+			{"value": 12371744},
+			{"value": 5371744},
+			{"value": 10371744},
+			{"value": 8371744}
+		]
+	},
+	{
+		"title": "Task Completed",
+		"color": "amber",
+		"icon": "list",
+		"data": [
+			{"value": 6355218},
+			{"value": 4355218},
+			{"value": 5955218},
+			{"value": 1355218},
+			{"value": 5355218}
+		]
+	}	
+]

@@ -1,0 +1,49 @@
+include ../.common/common.jade
+
+#labels(
+	*ngIf="showLabels",
+	[style.left]="labelProps.left + '%'",
+	[style.max-height]="labelProps.height")
+	span(
+		*ngFor="let group of groups",
+		[ngClass]="group.colorClass",
+		[class.active]="group.active",
+		(click)="toggleGroup(group)"
+		) {{group.label}}
+svg(
+	version="1.1",
+	[attr.viewBox]="'0 0 ' + width + ' ' + height",
+	preserveAspectRatio="xMinYMin meet")
+	rect#labels-ref(
+		*ngIf="showLabels",
+		#labelsRef,
+		[attr.width]="positions['labels'].x2 - positions['labels'].x1",
+		[attr.height]="positions['labels'].y2 - positions['labels'].y1",
+		[attr.x]="positions['labels'].x1",
+		[attr.y]="positions['labels'].y1")
+	g.axis-y(*ngIf="showLabels")
+		text(
+			*ngFor="let axis of axisY | values",
+			[attr.x]="0",
+			[attr.y]="axis.y",
+			dy="5",
+			[class.visible]="axis.visible"
+			) {{ axis.value }}
+	g(
+		*ngFor="let group of groups",
+		[class.hidden]="!group.active",
+		[ngClass]="group.colorClass")
+			rect(
+				*ngFor="let bar of group.bars",
+				[attr.width]="bar.width",
+				[attr.height]="bar.height",
+				[attr.x]="bar.x",
+				[attr.y]="bar.y")
+	g(*ngIf="showLabels")
+		text(
+			*ngFor="let axis of axisX",
+			[attr.x]="axis.x1 + (axis.width / 2)",
+			[attr.y]="positions['axisX'].y1",
+			[attr.width]="axis.width",
+			dy="6"
+			) {{axis.label}}

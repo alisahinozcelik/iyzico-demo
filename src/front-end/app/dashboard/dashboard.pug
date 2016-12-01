@@ -1,0 +1,24 @@
+section([flex-cont]="[1, 1, 2, 2]")
+	white-label.box(
+		*ngFor="let label of whiteLabels",
+		[title]="label.title",
+		[subtitle]="label.subtitle",
+		[count]="label.count")
+section([flex-cont]="[1, 2, 4, 4]")
+	colored-label.box(
+		*ngFor="let label of coloredLabels",
+		[color]="label.color",
+		[title]="label.title",
+		[icon]="label.icon",
+		[data]="label.data")
+section([flex-cont]="[1, 1, 2, 2]")
+	div
+		.box
+			h3.box-title ACTIVITIES
+			activities
+		.box
+			h3.box-title BROWSER USAGE
+			browser-usage
+	.box
+		h3.box-title ANALYTICS
+		bar-chart([width]="150", [height]="100", [showLabels]="true", [data]="analyticsData")

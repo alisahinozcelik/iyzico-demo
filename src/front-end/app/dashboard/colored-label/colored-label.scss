@@ -1,0 +1,59 @@
+@import '../../.common/common';
+
+$bar-height: 50px;
+
+.content,
+.bar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.content {
+	padding-bottom: $bar-height;
+
+	b {
+		font-size: 21px;
+
+		@each $name, $color in $color-set {
+			&.#{$name} {
+				color: $color;
+			}
+		}
+	}
+
+	h6 {
+		margin: .5em 0;
+		font-size: 16px;
+		font-weight: normal;
+	}
+
+	md-icon {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.bar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: $bar-height;
+	align-items: center;
+	padding: 0 $gap;
+	color: white;
+
+	@each $name, $color in $color-set {
+		&.#{$name} {
+			background-color: $color;
+		}
+	}
+
+	bar-chart {
+		width: 20%;
+	}
+
+	> span {
+		font-size: 15px;
+	}
+}

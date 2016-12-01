@@ -1,0 +1,11 @@
+aside(#sidebar="sidebar")
+main([style.margin-left]="sidebar.contentMargin + 'px'")
+	header
+		md-toolbar(*ngIf="window.breakpoint === 'xsmall'", (click)="toggleSidebar(sidebar)")
+			md-icon(
+				fontSet="fa",
+				fontIcon="fa-rocket")
+		md-toolbar(color="primary")
+			h1 {{pageTitle}}
+	#page-content
+		router-outlet

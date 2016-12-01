@@ -1,0 +1,49 @@
+@import '../../.common/common';
+
+.activity {
+	$before-width: 10px;
+
+	position: relative;
+	margin-left: $before-width / 2;
+	padding-top: 8px;
+	padding-bottom: 15px;
+	padding-left: $gap;
+	border-left-width: 1px;
+	border-left-style: solid;
+	
+	&:before {
+		content: "";
+		position: absolute;
+		display: inline-block;
+		width: $before-width;
+		height: $before-width;
+		left: -($before-width / 2);
+		top: $before-width;
+		border-radius: 50%;
+	}
+
+	$colors: $dark-indigo, $orange, $green;
+	@for $i from 1 through length($colors) {
+		&:nth-child(#{length($colors)}n + #{$i}) {
+			border-left-color: nth($colors, $i);
+
+			&:before {
+				background-color: nth($colors, $i);
+			}
+		}	
+	}
+
+	i {
+		display: block;
+		font-size: 13px;
+		font-style: normal;
+		color: #b0b0b0;
+	}
+
+	h6 {
+		margin: 0;
+		margin-top: .5em;
+		font-size: 17px;
+		font-weight: 500;
+	}
+}

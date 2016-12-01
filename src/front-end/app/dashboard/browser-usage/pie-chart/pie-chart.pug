@@ -1,0 +1,27 @@
+-var width = 50;
+
+svg(
+	version="1.1",
+	viewBox="0 0 "+width*4+" "+width*2,
+	preserveAspectRatio="xMinYMin meet")
+	circle(
+		*ngFor="let circle of data | reverse",
+		cx=width,
+		cy=width,
+		r=width/2,
+		stroke-width=width,
+		stroke-dasharray=Math.PI * width,
+		[attr.stroke-dashoffset]="circle.offset",
+		[ngClass]="circle.color")
+	rect(
+		*ngFor="let circle of data; let i = index",
+		x=110,
+		width=10,
+		height=10,
+		[attr.y]="(" + width*2 + " / (data.length * 2)) * ((2 * i) + 1) - 5",
+		[ngClass]="circle.color")
+	text(
+		*ngFor="let circle of data; let i = index",
+		x=125,
+		dy=5,
+		[attr.y]="(" + width*2 + " / (data.length * 2)) * ((2 * i) + 1)") {{circle.label}}

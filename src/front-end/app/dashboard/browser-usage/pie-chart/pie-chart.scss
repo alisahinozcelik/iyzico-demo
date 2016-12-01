@@ -1,0 +1,25 @@
+@import '../../../.common/common';
+
+circle {
+	fill: transparent;
+	transform-origin: center;
+	transform: rotate(-90deg);
+	
+	@each $name, $color in $color-set {
+		&.#{$name} {
+			stroke: $color;
+		}
+	}
+}
+
+rect {
+	@each $name, $color in $color-set {
+		&.#{$name} {
+			fill: $color;
+		}
+	}
+}
+
+text {
+	font-weight: 500;
+}

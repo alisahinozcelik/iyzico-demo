@@ -1,0 +1,90 @@
+@import '../.common/common.scss';
+
+.cont {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: white;
+	box-shadow: 2px 0 10px fade-out(black, .85);
+	z-index: 10001;
+
+	md-toolbar {
+		background-color: $dark-indigo;
+		color: white;
+
+		md-icon {
+			margin-right: 15px;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		max-width: 90%;
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: fade-out(black, .5);
+	z-index: 10000;
+}
+
+.avatar {
+	width: 100px;
+	height: 100px;
+	margin: 39px 0 46px;
+}
+
+.menu-item {
+	display: block;
+
+	&:hover,
+	&.active {
+		background-color: #f5f7f9;
+	}
+
+	.content {
+		white-space: nowrap;
+		color: $grey;
+		text-decoration: none;
+
+		md-icon {
+			margin-right: 16px;
+			transition: color .5s ease;
+		}
+	}
+
+	i {
+		display: inline-block;
+		width: 20px;
+		line-height: 20px;
+		text-align: center;
+		font-style: normal;
+		color: white;
+		border-radius: 2px;
+	}
+
+	@each $name, $color in $color-set {
+		&.#{$name} {
+			md-icon {
+				color: $color;
+			}
+
+			i {
+				background-color: $color;
+			}
+		}
+	}
+
+	.opened & {
+		md-icon {
+			color: inherit;
+		}
+	}
+}

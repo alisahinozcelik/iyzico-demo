@@ -1,0 +1,8 @@
+.content
+	div
+		b([ngClass]="color") {{count}}
+		h6 {{title}}
+	md-icon([svgSrc]="'/assets/images/icons/'+icon+'.svg'")
+.bar([ngClass]="color")
+	span % change
+	bar-chart([width]="300", [height]="100", [showLabels]="false", [data]="[chartData]")

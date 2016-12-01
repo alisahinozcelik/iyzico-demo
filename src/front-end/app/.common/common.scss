@@ -1,0 +1,35 @@
+@import '~@angular/material/core/theming/all-theme';
+
+/**
+ * Theme Options
+ */ 
+$default-app-primary: md-palette($md-indigo);
+$default-app-accent: md-palette($md-green);
+$default-app-warn: md-palette($md-amber, 700);
+
+$default-theme: md-light-theme($default-app-primary, $default-app-accent, $default-app-warn);
+
+$gap: 30px;
+
+/**
+ * Colors
+ */
+$dark-indigo: map-get($md-indigo, 700);
+$light-indigo: map-get($md-indigo, 500);
+$green: map-get($md-green, 500);
+$orange: map-get($md-deep-orange, 700);
+$amber: map-get($md-amber, 700);
+$light-blue: #38b4ee;
+
+$grey: #6a6c6f;
+$border-color: #d7e0f1;
+
+$color-set: (
+	"dark-indigo": $dark-indigo,
+	"light-indigo": $light-indigo,
+	"green": $green,
+	"orange": $orange,
+	"amber": $amber,
+	"light-blue": $light-blue,
+	"white": white
+);

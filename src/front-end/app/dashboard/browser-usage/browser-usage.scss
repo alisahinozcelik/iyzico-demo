@@ -1,0 +1,27 @@
+@import '../../.common/common';
+
+.cont {
+	display: flex;
+	align-items: center;
+}
+
+pie-chart {
+	min-width: 35%;
+	margin-right: $gap;
+}
+
+p {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+	.cont {
+		display: block;
+	}
+
+	p {
+		margin-top: $gap;
+	}
+}

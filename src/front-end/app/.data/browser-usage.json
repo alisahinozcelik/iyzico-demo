@@ -1,0 +1,17 @@
+[
+	{
+		"label": "Chrome",
+		"color": "dark-indigo",
+		"value": 65
+	},
+	{
+		"label": "Safari",
+		"color": "light-blue",
+		"value": 25
+	},
+	{
+		"label": "Firefox",
+		"color": "green",
+		"value": 10
+	}
+]
